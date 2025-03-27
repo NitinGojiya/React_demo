@@ -4,4 +4,9 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [tailwindcss(), react()],
+  build: {
+    rollupOptions: {
+      external: ["react-table"], // Prevents Vite from trying to bundle it
+    },
+  },
 });
